@@ -1,0 +1,18 @@
+! via Ethernet is connected to the net 172.16.91.0/24
+! Target ip: 172.16.19.100
+! VPN_Host ip: 172.16.19.10 
+
++ Win Firewall = OFF  
++ PacketWhisper Installed already
++ python 2.7.13(64-bit) installed
++ TrueCrypt
++ port 8080 is open
+
+
+- I can't ping Taget(172.16.91.100) + but he can ping me
+- Target can't reach port 8000, 80, 443 (can't accesss Internet) 
+
+------
+Findings:
++ Using EgressCheck Framework we identified a TCP port open: 9000
++ by changing the DNS server(in Win_taget) to my Kali now taget can access intenrnet -> thus port 53 UDP is outpound allowed by Firewall
